@@ -1,0 +1,4 @@
+name = "Sailthru API Client"
+description = A wrapper for the Sailthru PHP library. Provides an administration page for configuring your key and secret. Requires the Sailthru library from https://github.com/sailthru/sailthru-php5-client/
+core = 6.x
+php = 5.2
