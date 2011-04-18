@@ -24,9 +24,11 @@ Installation
 
 This guide assumes you are installing the module in sites/all/modules/ - if not, please adjust accordingly
 
+IMPORTANT: This module requires version 1.05 of the Sailthru PHP Library (or possibly higher).
+
 * Extract this module to your sites/all/modules/ folder
-* Download the Sailthru PHP5 Library from https://github.com/sailthru/sailthru-php5-client/zipball/v1.04
-  * Extract the contents of sailthru-sailthru-php5-client-31922d9/ to sites/all/modules/sailthru_client/lib/
+* Download the Sailthru PHP5 Library from https://github.com/sailthru/sailthru-php5-client/zipball/v1.05
+  * Extract the contents of sailthru-sailthru-php5-client-2342da3/ to sites/all/modules/sailthru_client/lib/
   * Ensure the file sites/all/modules/sailthru_client/lib/sailthru/Sailthru_Client.php exists
 * Install the module by visiting http://{yoursitedomain}/admin/build/modules - look for "Sailthu API Client"
 * Visit http://{yoursitedomain}/admin/settings/sailthru-client and configure your Key and Secret
@@ -38,7 +40,7 @@ Example
 To use this module, you simply need to call:
 
 <?php
-  $sailthru = sailthru_client_get_client();
+  $sailthru = sailthru_client_get_client(true); // If you would prefer not to revel your PHP version when calling the API use sailthru_client_get_client(false);
 
   if($sailthru == false) {
     // There has been an error - check your watchdog log

@@ -21,9 +21,9 @@ function sailthru_client_requirements($phase) {
 
       if (!class_exists('Sailthru_Client')) {
         $requirements['sailthru_client']['value'] = $t('Sailthru Library not found');
-        $requirements['sailthru_client']['description'] = $t('The <a href="@sailthru">Sailthru PHP Library</a> is missing. <a href="@download">Download</a> and extract version 1.04 to your <em>sailthru_client</em>/lib/ directory. Please check README.txt for more detailed instructions.', array(
+        $requirements['sailthru_client']['description'] = $t('The <a href="@sailthru">Sailthru PHP Library</a> is missing. <a href="@download">Download</a> and extract version 1.05 to your <em>sailthru_client</em>/lib/ directory. Please check README.txt for more detailed instructions.', array(
           '@sailthru' => 'https://github.com/sailthru/sailthru-php5-client',
-          '@download' => 'https://github.com/sailthru/sailthru-php5-client/zipball/v1.04'
+          '@download' => 'https://github.com/sailthru/sailthru-php5-client/zipball/v1.05'
         ));
         $requirements['sailthru_client']['severity'] = REQUIREMENT_ERROR;
       }

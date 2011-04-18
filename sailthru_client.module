@@ -24,7 +24,7 @@ function sailthru_client_menu() {
 /*
  * Constructor for Sailthru client
  */
-function sailthru_client_get_client() {
+function sailthru_client_get_client($reveal_php_version = true) {
   $api_key = variable_get('sailthru_client_api_key', '');
   $api_secret = variable_get('sailthru_client_api_secret', '');
   $api_uri = variable_get('sailthru_client_api_uri', 'https://api.sailthru.com');
@@ -48,5 +48,5 @@ function sailthru_client_get_client() {
   module_load_include('php', 'sailthru_client', 'lib/sailthru/Sailthru_Client_Exception');
   module_load_include('php', 'sailthru_client', 'lib/sailthru/Sailthru_Client');
 
-  return new Sailthru_Client($api_key, $api_secret, $api_uri);
+  return new Sailthru_Client($api_key, $api_secret, $api_uri, $reveal_php_version);
 }
