@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Form builder; Displays Sailthru API administration settings
- * page.
+ * @file
+ * Form builder; Displays Sailthru API administration settings page.
  *
  * @see system_settings_form()
  */
@@ -15,7 +15,7 @@ function sailthru_client_admin_settings() {
     '#description'   => t('The API key provided by Sailthru'),
     '#required'      => TRUE,
     '#size'          => 32,
-    '#maxlength'   => 255,
+    '#maxlength'     => 255,
     '#default_value' => variable_get('sailthru_client_api_key', ''),
   );
 

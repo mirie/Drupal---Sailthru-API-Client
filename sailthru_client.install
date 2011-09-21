@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Install file for the Sailthru Client module.
+ * Install, update and uninstall functions for the Sailthru Client module.
  */
 
 /**
@@ -14,10 +14,10 @@ function sailthru_client_requirements($phase) {
 
   switch ($phase) {
     case 'install':
-      /*
-       * Make sure Sailthru_Client.php is in the right place
-       */
-      @include_once dirname(__FILE__) . '/lib/sailthru/Sailthru_Client.php'; // Suppress error if it's not there
+
+      // Make sure Sailthru_Client.php is in the right place.
+      // Suppress error if it's not there.
+      @include_once dirname(__FILE__) . '/lib/sailthru/Sailthru_Client.php';
 
       if (!class_exists('Sailthru_Client')) {
         $requirements['sailthru_client']['title'] = $t('Sailthru API Client');
@@ -32,4 +32,13 @@ function sailthru_client_requirements($phase) {
   }
 
   return $requirements;
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function sailthru_client_uninstall() {
+  variable_del('sailthru_client_api_key');
+  variable_del('sailthru_client_api_secret');
+  variable_del('sailthru_client_api_uri');
 }
