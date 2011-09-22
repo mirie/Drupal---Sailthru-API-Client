@@ -29,17 +29,17 @@ function sailthru_client_get_client($reveal_php_version = TRUE) {
   $api_secret = variable_get('sailthru_client_api_secret', '');
   $api_uri = variable_get('sailthru_client_api_uri', 'https://api.sailthru.com');
   if (empty($api_key)) {
-    watchdog('sailthru', 'The Sailthru API Key has not been configured. Please visit the configuration page.' . ' ' . l('Configure Sailthru Module', '/admin/settings/sailthru-client'));
+    watchdog('sailthru', 'The Sailthru API Key has not been configured. Please visit the <a href="!url">configuration page</a>.', array('!url' => url('admin/settings/sailthru-client')));
     drupal_set_message(t('Unable to connect to Sailthru, please check your settings'), 'error', FALSE);
     return FALSE;
   }
   if (empty($api_secret)) {
-    watchdog('sailthru', 'The Sailthru API Secret has not been configured. Please visit the configuration page.' . ' ' . l('Configure Sailthru Module', '/admin/settings/sailthru-client'));
+    watchdog('sailthru', 'The Sailthru API Secret has not been configured. Please visit the <a href="!url">configuration page</a>.', array('!url' => url('admin/settings/sailthru-client')));
     drupal_set_message(t('Unable to connect to Sailthru, please check your settings'), 'error', FALSE);
     return FALSE;
   }
   if (empty($api_uri)) {
-    watchdog('sailthru', 'The Sailthru URI has not been configured. Please visit the configuration page.' . ' ' . l('Configure Sailthru Module', '/admin/settings/sailthru-client'));
+    watchdog('sailthru', 'The Sailthru URI has not been configured. Please visit the <a href="!url">configuration page</a>.', array('!url' => url('admin/settings/sailthru-client')));
     drupal_set_message(t('Unable to connect to Sailthru, please check your settings'), 'error', FALSE);
     return FALSE;
   }
