@@ -19,6 +19,11 @@ TODO
 
 * Check Sailthru connectivity on status page
 
+Download
+--------
+
+This module is also available for download on Drupal.org: http://drupal.org/project/sailthru_client
+
 Installation
 ------------
 
